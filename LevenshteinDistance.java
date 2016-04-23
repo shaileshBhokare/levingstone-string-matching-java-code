@@ -37,14 +37,11 @@ public class LevenshteinDistance {
         return costs[s2.length()];
     }
 
-    public static Map<String, Double> printDistance(String Source, ArrayList<String> alldata) {
+    public static Map<String, Double> printDistance(String Source1, String  Source2) {
 
-        ArrayList<Double> resultList = new ArrayList<>();
-        Map<String, Double> innerMap = new HashMap<String, Double>();
-
-        for (int i = 0; i < alldata.size(); i++) {
-            String s1 = Source;
-            String Data = alldata.get(i);
+  
+            String s1 = Source1;
+            String Data = Source2;
             String s2 = Data;
             double similarityOfStrings = 0.0;
             int editDistance = 0;
@@ -64,10 +61,6 @@ public class LevenshteinDistance {
             DecimalFormat newFormat = new DecimalFormat("#.##");
             double twoDecimal = Double.valueOf(newFormat.format(result));
             System.out.println(Source + "+++" + Data + ">>>>" + twoDecimal);
-            resultList.add(twoDecimal);
-            innerMap.put(Data, twoDecimal);
-//            return twoDecimal;
-        }
-        return innerMap;
+        return twoDecimal;
     }
 }
